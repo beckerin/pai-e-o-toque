@@ -1,32 +1,31 @@
 <html>
-    <head>
-        <meta charset="utf-8" >
-        <title>O pai é o toque</title>
-        <style>
-            #game {
-                border: 2px solid #ccc;
-                image-rendering: pixelated;
-                width: 700px;
-                height: 720px;
-            }
-        </style>
-    </head>
-    <body>
-        <canvas id="game"></canvas>
-        <script type="module">
-            import createState from './state/state.js'
-            import createGame from './game/game.js'
-            import renderScreen from './render/render.js'
-            import createControls from './controls/controls.js'
-            
-            const state = createState()
-            const controls = createControls(state)
-            const game = createGame(state, controls)
+  <head>
+    <meta charset="utf-8" />
+    <title>O pai é o toque</title>
+    <style>
+      #game {
+        border: 2px solid #ccc;
+        image-rendering: pixelated;
+        width: 1800px;
+        height: 1000px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="game"></canvas>
+    <script type="module">
+      import createState from "./state/state.js";
+      import createGame from "./game/game.js";
+      import renderScreen from "./render/render.js";
+      import createControls from "./controls/controls.js";
 
-            game.preGame()
-        
-            renderScreen(state, requestAnimationFrame)
+      const state = createState();
+      const controls = createControls(state);
+      const game = createGame(state, controls);
 
-        </script>
-    </body>
+      game.preGame();
+
+      renderScreen(state, requestAnimationFrame);
+    </script>
+  </body>
 </html>
